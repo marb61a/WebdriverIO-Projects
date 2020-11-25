@@ -1,0 +1,12 @@
+Setup WebdriverIO (WDIO)
+    - NPM will need to have been initialise in a project folder by the time WDIO is being installed
+    - To install WDIO using the following command
+        - npm install --save-dev @wdio/cli
+    - Following the installation a config file will have to be generated
+        - npx wdio config
+        - npx runs npm packages without needing to have paths etc 
+    - This will generate a list of options which must be selected through
+        - This covers from base url to where the tests will be ran so this will change depending on circumstances of testing
+
+Setup Babel
+    - 

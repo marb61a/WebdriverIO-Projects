@@ -17,7 +17,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/**.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -129,7 +129,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
-
+    port: 4444,
 
     
     //
