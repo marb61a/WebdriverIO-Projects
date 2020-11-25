@@ -9,4 +9,21 @@ Setup WebdriverIO (WDIO)
         - This covers from base url to where the tests will be ran so this will change depending on circumstances of testing
 
 Setup Babel
-    - 
+    - Babel is a JavaScript compiler
+        - https://babeljs.io/
+    - Babel may need up to 4 packages installed
+        - npm install --savve-dev @babel/core @babel/cli @babel/preset-env @babel/register
+    - Thene the babel.config.js file will need to be added
+        - There are options available for customising project eg test location etc
+    
+Web Automation testing
+Launch Chrome Driver
+    - Describe block is a block which holds a set of test steps
+    - Change the package.json file to run wdio config file which runs tests
+        - "test": "wdio wdio.conf.js"
+        - npm run test
+    - To avoid seeing node based errors
+        - npm run test --silent
+    - Errors may occur if chromedriver and installed version of chrome differ
+    -
+    
