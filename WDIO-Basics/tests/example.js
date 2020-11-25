@@ -13,4 +13,22 @@ describe('First Steps with WebdrverIO', () => {
     //     browser.pause(3000);
     // });
 
+    it('H1 should be visible', () => {
+        // Gets the selector and saves to variable
+        const h1 = $('h1');
+
+        expect(h1).toBeVisible();
+    });
+
+    it('P tag should be visible', () => {
+        const p = $('p');
+
+        expect(p).toBeVisible();
+    });
+
+    it('Check Link Value', () => {
+        const link = $('a');
+        expect(link).toHaveLink('https://www.iana.org/domains/example')
+    });
+
 });

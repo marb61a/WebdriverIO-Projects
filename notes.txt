@@ -37,4 +37,13 @@ Pausing tests
 Assert Title & URL
     - Assertions are used to check whether a value that is returned matches what was expected
     - If urls do not exactly match what is returned then the assertion will fail
-    - 
+    - Uses the tohaveUrl and toHaveTitle commands 
+
+Assert Elements
+    - Verifying that elements on the website are visible
+    - Uses the toBeVisible command
+
+Assert Links
+    - Assert that the value of a link is correct
+    - Uses the toHaveLink command
+
