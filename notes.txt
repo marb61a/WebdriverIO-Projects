@@ -25,5 +25,16 @@ Launch Chrome Driver
     - To avoid seeing node based errors
         - npm run test --silent
     - Errors may occur if chromedriver and installed version of chrome differ
-    -
-    
+    - Also may need to disable baseUrl in wdio.conf.js if not using a base url
+
+Pausing tests
+    - Tests run very quickly so may need pauses to see where issues occur
+    - These are called explicit delays and should only be used in setting up tests
+    - Implicit delays which are more intelligent should be used instead of explicit
+    - Delays are expressed in milliseconds
+    - Be careful to use the proper domain name when specifying sites
+
+Assert Title & URL
+    - Assertions are used to check whether a value that is returned matches what was expected
+    - If urls do not exactly match what is returned then the assertion will fail
+    - 
