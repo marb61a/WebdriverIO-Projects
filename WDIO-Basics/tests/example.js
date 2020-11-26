@@ -54,4 +54,13 @@ describe('First Steps with WebdrverIO', () => {
         expect(button).toHaveValue('Populate');
     });
 
+    it('Save Screenshot', () => {
+        browser.saveScreenshot('./screenshots/wdio-example.png');
+    });
+
+    it('Change Browser Viewport', () => {
+        browser.setWindowSize(800, 600);
+        browser.pause(long);
+    });
+
 });

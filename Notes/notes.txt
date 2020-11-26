@@ -59,11 +59,26 @@ Get Element Text
             - Assertion can be used to check that the text is correct using toHaveText
 
 Get Element Attribute
-    - Assert any value from an element
+    - Get and assert any value from an element
     - This uses the toHaveAttrContaining command
     - The testcafe site is highly recommended for learning
         - https://devexpress.github.io/testcafe/example/
-    - When interacting with an element with an id you will have to use $
+    - When interacting with an element with an id you will have to use # before a name
 
 Get Element Value
-    -         
+    - Similar to getting an element ettribute
+    - This time the toHaveValue is used
+
+Taking Screenshots
+    - Using WDIO rather than 3rd party
+    - The savescreenShot command is used
+    - Always ensure that the path to the folder to save Screenshots is correct
+    - By default each time the savescreenShot command is ran it overwrites the existing image
+
+Window Size Setup
+    - How to set browser viewport
+    - This can be a very useful tool in testing
+    - The setWindowSize command is used and takes 2 parameters -> Width and height
+
+Timoeout Helpers
+- 
