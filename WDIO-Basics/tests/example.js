@@ -1,7 +1,9 @@
+import { short, medium, long } from '../lib/timeouts';
+
 describe('First Steps with WebdrverIO', () => {
     it("Load example website", () => {
         browser.url('http://www.example.com');
-        browser.pause(3000);
+        browser.pause(short);
 
         expect(browser).toHaveUrl('http://www.example.com/');
         expect(browser).toHaveTitle('Example Domain');
@@ -45,6 +47,7 @@ describe('First Steps with WebdrverIO', () => {
         const button = $('#submit-button');
         button.waitForExist();
         expect(button).toHaveAttrContaining('type', 'submit');
+        browser.pause(long);
     });
 
     it('Assert Value', () => {
@@ -61,6 +64,21 @@ describe('First Steps with WebdrverIO', () => {
     it('Change Browser Viewport', () => {
         browser.setWindowSize(800, 600);
         browser.pause(long);
+    });
+
+    it('Set Mobile View', () => {
+        browser.setWindowSize(mobile[0], mobile[1]);
+        browser.pause(short);
+    });
+
+    it('Set Tablet View', () => {
+        browser.setWindowSize(tablet[0], tablet[1]);
+        browser.pause(short);
+    });
+
+    it('Set Desktop View', () => {
+        browser.setWindowSize(desktop[0], desktop[1]);
+        browser.pause(short);
     });
 
 });
