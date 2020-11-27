@@ -80,5 +80,27 @@ Window Size Setup
     - This can be a very useful tool in testing
     - The setWindowSize command is used and takes 2 parameters -> Width and height
 
-Timoeout Helpers
-- 
+Timeout Helpers
+    - Timeouts are easy to created
+    - They can be set to various lengths 
+        - For example short, medium and long timeouts can be created
+
+Device Emulation Helpers
+    - There maybe a need for platform specific helper functions
+    - Tablets, Mobile and desktop devices have differene screensizes so setting tests especially for these will make for better testing
+
+Browser Actions 
+Working With Inputs
+    - How to input with interact with input fields
+    - To exclude a test from being ran
+        - Add the proper path to the file in the exclude section of the wdio.conf.js file
+    - Select the input field and input using setValue
+Click & Double Click
+    - Click an input element (eg Button) using the click() command
+    - Double click on the element using the doubleClick() command
+Radio Buttons & Checkboxes
+    - Both elements will make use of the click() command 
+Selectbox
+    - You can select from a list of values eg a dropdown list
+    - This can be done by selecting certain text using the selectByVisibleText() command
+    
