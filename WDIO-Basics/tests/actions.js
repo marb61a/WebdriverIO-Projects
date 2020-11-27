@@ -14,10 +14,32 @@ describe('Browser Actions', () => {
     });
 
     it('Click', () => {
-        const buttonPupulate = $('#populate')
-		buttonPupulate.waitForExist()
-        buttonPupulate.click();
+        const buttonPopulate = $('#populate')
+		buttonPopulate.waitForExist()
+        buttonPopulate.click();
         browser.pause(medium);
+        buttonPopulate.doubleClick();
+    });
+
+    it('Checkbox & Radio Button', () => {
+		browser.url('https://devexpress.github.io/testcafe/example/');
+		const radio = $('#linux');
+		radio.waitForExist();
+		radio.click();
+		browser.pause(short);
+
+		const checkbox = $('#remote-testing');
+		checkbox.waitForExist();
+		checkbox.click();
+		browser.pause(short);
+    });
+
+    it('Select Box', () => {
+        browser.url('https://devexpress.github.io/testcafe/example/');
+        const select = $('#preferred-interface');
+        select.waitForExist();
+        select.selectByVisibleText('JavaScript API');
+		browser.pause(short);
     });
 
 });
