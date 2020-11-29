@@ -12,11 +12,22 @@ describe('E2E Tests - Login/Logout Flow', () => {
     });
 
     it('Should login with valid credentials', () => {
-
+        browser.url('http://zero.webappsecurity.com/index.html');
+        $('#signin_button').waitForExist();
+        $('#signin_button').click();
+        $('#login_form').waitForExist();
+        $('#user_login').setValue('username');
+        $('#user_password').setValue('password');
+        $('input[type="submit"]').click();
+        $('.nav-tabs').waitForExist();
     });
 
     it('Should logout of app', () => {
-
+        $('.icon-user').waitForExist();
+        $('.icon-user').click();
+        $('#logout_link').waitForExist();
+        $('#logout_link').click();
+        $('#pages-nav').waitForExist();
     });
 
 });
