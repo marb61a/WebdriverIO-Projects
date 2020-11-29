@@ -7,7 +7,13 @@ describe('E2E Tests - Feedback', () => {
     });
 
     it('Should submit feedback form', () => {
-
+        $('#name').setValue('Name');
+        $('#email').setValue('test@test.com');
+        $('#subject').setValue('Subjects');
+        $('#comment').setValue('Just a message!');
+        $('input[type="submit"]').click();
+        
+        expect(browser).toHaveUrl('http://zero.webappsecurity.com/sendFeedback.html');
     });
 
 });
