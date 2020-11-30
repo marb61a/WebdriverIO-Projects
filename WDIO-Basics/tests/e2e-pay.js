@@ -21,7 +21,8 @@ describe('E2E Tests - Pay', () => {
         selectAccount.selectByVisibleText('Loan');
 
         $('#sp_amount').setValue('500');
-		$('#sp_date').setValue('2020-03-31');
+        $('#sp_date').setValue('2020-03-31');
+        browser.keys('Enter');
 		$('#sp_description').setValue('Test');
 		$('#pay_saved_payees').click();
 		const message = $('#alert_content');
