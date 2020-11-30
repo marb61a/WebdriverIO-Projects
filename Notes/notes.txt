@@ -103,4 +103,23 @@ Radio Buttons & Checkboxes
 Selectbox
     - You can select from a list of values eg a dropdown list
     - This can be done by selecting certain text using the selectByVisibleText() command
-    
+
+E2E Tests
+!! - Some tests may be flaky depending on factors
+    - Tests that are passing can fail and the opposite too so will need investigations
+!! - To limit the number of concurrent browser instances
+    - Change the maxInstances value in the capabilities section of wdio.conf.js
+!! - Where possible elminate duplicate or repeat code
+    - Refactoring can make tests safer, more efficient and easier to maintain
+    - Dragging a dropping a date when fully selected can avoid having multiple actions on a date picker
+        - Instead it will just add the value to the input field
+        - This trick may not work on all date picker fields
+        - There may also be a need to use keys to send an enter to avoid other element obstruction
+!! - Changing exclude to stop certain tests running may not be good if there are a large amount of tests
+    - There is an option to change the specs section to the file being currently tested
+    - This will again need to be changed depending on circumstances
+!! - If there is no id on an element then it may be found using partial text match
+    - This can be done using *=text_to_be_found
+
+Page Object Model
+
