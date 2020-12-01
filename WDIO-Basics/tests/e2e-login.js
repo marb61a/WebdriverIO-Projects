@@ -1,10 +1,12 @@
+import App from '../page-objects/App';
 import LoginPage from '../page-objects/pages/LoginPage';
+import Navbar from '../page-objects/components/Navbar';
 
 describe('E2E Tests - Login/Logout Flow', () => {
     it('Should not login with invalid credentials', () => {
-        browser.url('http://zero.webappsecurity.com/index.html');
-        $('#signin_button').waitForExist();
-        $('#signin_button').click();
+        App.openHomePage();
+        Navbar.clickSignIn();
+
         LoginPage.pauseShort();
         LoginPage.formIsVisible();
         LoginPage.fillForm('invalid username', 'invalid password');
@@ -15,12 +17,11 @@ describe('E2E Tests - Login/Logout Flow', () => {
     });
 
     it('Should login with valid credentials', () => {
-        browser.url('http://zero.webappsecurity.com/index.html');
-        $('#signin_button').waitForExist();
-        $('#signin_button').click();
+        App.openHomePage();
+        Navbar.clickSignIn();
         
         LoginPage.formIsVisible();
-        LoginPage.fillForm('invalid username', 'invalid password');
+        LoginPage.fillForm('username', 'password');
         LoginPage.submitForm();
         $('.nav-tabs').waitForExist();
     });

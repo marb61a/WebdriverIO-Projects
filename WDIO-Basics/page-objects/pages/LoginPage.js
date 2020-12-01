@@ -21,7 +21,7 @@ class LoginPage extends Base {
         this.loginForm.waitForExist();
     }
 
-    fillForm(){
+    fillForm(username, password){
         this.usernameInput.setValue(username);
         this.passwordInput.setValue(password);
     }
@@ -29,7 +29,7 @@ class LoginPage extends Base {
     submitForm(){
         this.submitButton.click();
     }
-    
+
 }
 
 export default new LoginPage();
