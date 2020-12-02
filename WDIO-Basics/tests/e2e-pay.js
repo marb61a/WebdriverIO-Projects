@@ -5,9 +5,7 @@ import Navbar from '../page-objects/components/Navbar';
 describe('E2E Tests - Pay', () => {
     it('Should login with valid credentials', () => {
         App.openLoginPage();
-        LoginPage.formIsVisible();
-        LoginPage.fillForm('username', 'password');
-        LoginPage.submitForm();
+        LoginPage.login('username', 'password');
 
         Navbar.insideNavbarIsVisible();
     });

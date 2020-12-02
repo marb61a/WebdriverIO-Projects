@@ -5,15 +5,13 @@ import Navbar from '../page-objects/components/Navbar';
 describe('E2E Tests - Help Section', () => {
     it('Should login with valid credentials', () => {
         App.openLoginPage();
-        LoginPage.formIsVisible();
-        LoginPage.fillForm('username', 'password');
-        LoginPage.submitForm();
+        LoginPage.login('username', 'password');
 
         Navbar.insideNavbarIsVisible();
     });
 
     it('Should load help content', () => {
-        $('.icon-cog').click();
+        Navbar.clickSettings();
         $('#help_link').waitForExist();
         $('#help_link').click();
         

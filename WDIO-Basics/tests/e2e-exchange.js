@@ -5,9 +5,7 @@ import Navbar from '../page-objects/components/Navbar';
 describe('E2E Tests - Exchange', () => {
     it('Should log in to the app', () => {
         App.openLoginPage();
-        LoginPage.formIsVisible();
-        LoginPage.fillForm('username', 'password');
-        LoginPage.submitForm();
+        LoginPage.login('username', 'password');
 
         Navbar.insideNavbarIsVisible();
     });
