@@ -20,9 +20,12 @@ describe('E2E Tests - Login/Logout Flow', () => {
         App.openHomePage();
         Navbar.clickSignIn();
         
-        LoginPage.formIsVisible();
-        LoginPage.fillForm('username', 'password');
-        LoginPage.submitForm();
+        // LoginPage.formIsVisible();
+        // LoginPage.fillForm('username', 'password');
+        // LoginPage.submitForm();
+
+        // Will replace the above lines in 1 line
+        LoginPage.login('username', 'password');
         Navbar.insideNavbarIsVisible();
     });
 
