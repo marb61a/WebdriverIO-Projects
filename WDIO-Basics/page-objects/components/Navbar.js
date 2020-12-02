@@ -5,10 +5,23 @@ class Navbar extends Base {
         return $('#signin_button');
     }
 
+    get insideNavbar(){
+        return $('.nav-tabs');
+    }
+
+    signInButtonIsVisible(){
+        this.signInButton.waitForExist();
+    }
+
     clickSignIn(){
         this.signInButton.waitForExist();
         this.signInButton.click();
     }
+
+    insideNavbarIsVisible(){
+        this.insideNavbar.waitForExist();
+    }
+
 }
 
 export default new Navbar();

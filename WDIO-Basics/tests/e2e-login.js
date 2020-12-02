@@ -12,8 +12,8 @@ describe('E2E Tests - Login/Logout Flow', () => {
         LoginPage.fillForm('invalid username', 'invalid password');
         LoginPage.submitForm();
 
-        const error = $('.alert-error');
-        expect(error).toHaveText('Login and/or password are wrong.');
+        const errorMessage = LoginPage.error;
+        expect(errorMessage).toHaveText('Login and/or password are wrong.');
     });
 
     it('Should login with valid credentials', () => {
@@ -23,14 +23,11 @@ describe('E2E Tests - Login/Logout Flow', () => {
         LoginPage.formIsVisible();
         LoginPage.fillForm('username', 'password');
         LoginPage.submitForm();
-        $('.nav-tabs').waitForExist();
+        Navbar.insideNavbarIsVisible();
     });
 
     it('Should logout of app', () => {
-        $('.icon-user').waitForExist();
-        $('.icon-user').click();
-        $('#logout_link').waitForExist();
-        $('#logout_link').click();
+        App.logout();
         $('#pages-nav').waitForExist();
     });
 
