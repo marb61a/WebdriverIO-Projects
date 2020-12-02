@@ -28,7 +28,7 @@ describe('E2E Tests - Login/Logout Flow', () => {
 
     it('Should logout of app', () => {
         App.logout();
-        $('#pages-nav').waitForExist();
+        Navbar.signInButtonIsVisible();
     });
 
 });
