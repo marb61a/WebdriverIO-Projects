@@ -15,11 +15,13 @@ describe('E2E Tests - Help Section', () => {
         Navbar.clickSettings();
         Navbar.clickHelp();
         
-        const title = $('.span8 > h3');
+        const title = HelpPage.title;
         expect(title).toHaveText('How do I log into my account?');
-        $('*=transfer funds').click();
+
+        HelpPage.clickOnTransferFunds();
         expect(title).toHaveText('How do I transfer funds?');
-        $('*=pay bills').click();
+
+        HelpPage.clickOnPayBills();
         expect(title).toHaveText('How do I pay bills?');
     });
 

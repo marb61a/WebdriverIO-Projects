@@ -18,6 +18,11 @@ class HelpPage extends Base {
         this.transferFundsLink.click();
     }
 
+    clickOnPayBills(){
+        this.payBillsLink.waitForExist();
+        this.payBillsLink.click();
+    }
+
 }
 
 export default new HelpPage(); 
