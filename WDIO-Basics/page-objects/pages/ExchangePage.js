@@ -21,6 +21,19 @@ class ExchangePage extends Base {
 		return $('#alert_content')
     }
     
+    setAmount(num){
+        this.amountInput.waitForExist();
+        this.amountInput.setValue(num);
+    }
+
+    selectDollars(){
+        this.dollarButton.click();
+    }
+
+    submitForm() {
+		this.submitButton.click()
+    }
+    
 }
 
 export default new ExchangePage();
