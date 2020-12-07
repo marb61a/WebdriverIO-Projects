@@ -14,7 +14,7 @@ class InsideNavbar extends Base {
   }
 
   get exchangeLink() {
-    return $('#tabs &gt; ul &gt; li:nth-child(3) &gt; a')
+    return $('#tabs > ul > li:nth-child(3) > a')
   }
 
   clickAccountActivityTab(){

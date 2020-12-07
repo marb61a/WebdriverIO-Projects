@@ -13,21 +13,25 @@ describe('E2E Tests - Pay', () => {
     });
 
     it('Should make payment', () => {
-        $('#pay_bills_tab').click();
-        const selectPayee = $('#sp_payee');
-        selectPayee.waitForExist();
-        selectPayee.selectByAttribute('value', 'apple');
+        InsideNavbar.clickPayBillsTab();
+		const selectPayee = PaymentPage.payeeSelect;
+		selectPayee.waitForExist();
+		selectPayee.selectByAttribute('value', 'apple');
 
-        const selectAccount = $('#sp_account');
+        const selectAccount = PaymentPage.accountSelect;
         selectAccount.waitForExist();
         selectAccount.selectByVisibleText('Loan');
 
+        // Did not make use of form fill method due to issue
+        // when trying to enter all details. Dropdown date picker
+        // element was obscuring another elements.
         $('#sp_amount').setValue('500');
         $('#sp_date').setValue('2020-03-31');
         browser.keys('Enter');
 		$('#sp_description').setValue('Test');
-		$('#pay_saved_payees').click();
-		const message = $('#alert_content');
+        $('#pay_saved_payees').click();
+        
+		const message = PaymentPage.message;
 		expect(message).toHaveText('The payment was successfully submitted.');
     });
 
