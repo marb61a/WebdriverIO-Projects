@@ -1,5 +1,7 @@
 import App from '../page-objects/App';
 import LoginPage from '../page-objects/pages/LoginPage';
+import PaymentPage from '../page-objects/pages/PaymentPage';
+import InsideNavbar from '../page-objects/components/InsideNavbar';
 import Navbar from '../page-objects/components/Navbar';
 
 describe('E2E Tests - Pay', () => {
