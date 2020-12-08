@@ -15,6 +15,22 @@ class LoginPage {
         return $('#form-login > div:nth-child(2) > label');
     }
 
+    get passwordField(){
+        return $('#loginPassword');
+    }
+    
+    get rememberLoginCheckbox(){
+        return $('#rememberLoginChk');
+    }
+
+    get rememberLoginLabel(){
+        return $('#form-login > div.form-check > label');
+    }
+    
+    get submitButton(){
+        return $('#form-login > button');
+    }
+
 }
 
 module.exports = new LoginPage();
