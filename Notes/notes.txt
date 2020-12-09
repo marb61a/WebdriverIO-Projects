@@ -122,4 +122,25 @@ E2E Tests
     - This can be done using *=text_to_be_found
 
 Page Object Model
+    - This is a way to abstract automation code into classes
+    - This allows for a large amount of code reuse which prevents repetition
+    - This is also much more efficient to maintain as changes only have to be made in 1 place
+!! - Having the same test in both specs and exclude may cause issues
+        - The system will get an error due to a file being ran and not ran at the same time
+!! - Keep running tests frequently when making changes
+        - It is easier than tracking down issues after lots of changes
 
+!! Prettier
+    - Needs to have a .prettierrc file present for configuration
+
+!! HTTP Server
+    - Allows for running applications locally
+    - Install via npm -> npm install http-server -g
+        - Install globally so that it can be ran in multiple projects
+    - To run simply go to the project folder where you wish to run from
+        - Then type http-server at the prompt
+
+!! Running tests
+    - By setting package.json test entry to -> "test": "./node_modules/.bin/wdio"
+    - Tests can be ran simply by running npm test wdio.conf.js
+    - Again this will run tests listed in the specs section
