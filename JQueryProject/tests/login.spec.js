@@ -46,11 +46,43 @@ describe('Test Suite', () => {
     });
 
     it('Should display error when email is incorrect', () => {
+        browser.url('');
+
+        LoginPage.emailField.setValue('fake@fake.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.submitButton.click();
+
+        assert.equal(browser.isAlertOpen(), true, 'Alert is not open');
+        assert.equal(browser.getAlertText(), 'Invalid email and password', 'Alert text not equal');
+        browser.acceptAlert();
+
+        assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
+
+        browser.pause(2000);
+    });
+
+    it('Should display error when password is incorrect', () => {
+        browser.url('');
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('fake');
+        LoginPage.submitButton.click();
+
+        assert.equal(browser.isAlertOpen(), true, 'Alert is not open');
+        assert.equal(browser.getAlertText(), 'Invalid email and password', 'Alert text not equal');
+        browser.acceptAlert();
+
+        assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
+
+        browser.pause(2000);
+    });
+
+    it('Should display error when password case is incorrect', () => {
 
     });
 
-    it('Should display error when password is incorrect');
-    it('Should display error when password case is incorrect');
-    it('Should login with valid email and passord');
+    it('Should login with valid email and passord', () => {
+
+    });
 
 });
