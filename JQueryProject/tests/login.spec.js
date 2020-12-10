@@ -15,8 +15,7 @@ describe('Test Suite', () => {
         browser.acceptAlert();
 
         assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
-
-        browser.pause(2000);
+        
     });
     
     it('Should display error when email is missing', () => {
@@ -30,7 +29,7 @@ describe('Test Suite', () => {
         browser.acceptAlert();
 
         assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
-        browser.pause(2000);
+        
     });
 
     it('Should display error when email and password are missing', () => {
@@ -43,7 +42,7 @@ describe('Test Suite', () => {
         browser.acceptAlert();
 
         assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
-        browser.pause(2000);
+        
     });
 
     it('Should display error when email is incorrect', () => {
@@ -59,7 +58,7 @@ describe('Test Suite', () => {
 
         assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
 
-        browser.pause(2000);
+        
     });
 
     it('Should display error when password is incorrect', () => {
@@ -75,7 +74,7 @@ describe('Test Suite', () => {
 
         assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
 
-        browser.pause(2000);
+        
     });
 
     it('Should display error when password case is incorrect', () => {
@@ -91,7 +90,7 @@ describe('Test Suite', () => {
 
         assert.equal(browser.isAlertOpen(), false, 'Alert is still open');
 
-        browser.pause(2000);
+        
     });
 
     it('Should login with valid email and passord', () => {
@@ -103,10 +102,10 @@ describe('Test Suite', () => {
 
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'The overlay is still displayed');
 
-        browser.pause(2000);
+        
     });
 
-    it.only("Should remember login credentials", () => {
+    it("Should remember login credentials", () => {
         browser.url('');
 
         // Need to maximize window to avoid the menu becoming a hamburger and not 
@@ -120,13 +119,14 @@ describe('Test Suite', () => {
 
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'The overlay is still displayed');
 
-        browser.pause(2000);
-
         HeaderPage.logoutLink.click();
 
         assert.equal(LoginPage.overlay.isDisplayed(), true, 'The overlay is not displayed');
         assert.equal(LoginPage.emailField.getValue(), '1@2.com', 'Values are not the same');
+
+        // Only useful in this example as the password length is 8 but the field is obfuscated
         assert.equal(LoginPage.passwordField.getValue().length, 8, 'Password is too short');
+        assert.equal(LoginPage.rememberLoginCheckbox.isSelected(), true, 'Checkbox is not selected');
 
     });
 
