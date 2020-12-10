@@ -1,6 +1,7 @@
 const assert = require('assert');
 
 const LoginPage = require('../pages/login.page');
+const HeaderPage = require('../pages/header.page');
 
 describe('Test Suite', () => {
     it('Should display error when password is missing', () => {
@@ -103,6 +104,30 @@ describe('Test Suite', () => {
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'The overlay is still displayed');
 
         browser.pause(2000);
+    });
+
+    it.only("Should remember login credentials", () => {
+        browser.url('');
+
+        // Need to maximize window to avoid the menu becoming a hamburger and not 
+        // interactable during testing
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        assert.equal(LoginPage.overlay.isDisplayed(), false, 'The overlay is still displayed');
+
+        browser.pause(2000);
+
+        HeaderPage.logoutLink.click();
+
+        assert.equal(LoginPage.overlay.isDisplayed(), true, 'The overlay is not displayed');
+        assert.equal(LoginPage.emailField.getValue(), '1@2.com', 'Values are not the same');
+        assert.equal(LoginPage.passwordField.getValue().length, 8, 'Password is too short');
+
     });
 
 });
