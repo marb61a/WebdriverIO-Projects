@@ -21,7 +21,7 @@ describe('Header Test Suite', () => {
         browser.pause(2000);
     });
 
-    it.only('It should open wolverine modal', () => {
+    it('It should open wolverine modal', () => {
         browser.url('');
 
         browser.maximizeWindow();
@@ -42,8 +42,30 @@ describe('Header Test Suite', () => {
 
     });
 
-    it('It should open wolverine modal', () => {
+    it.only('It should close wolverine modal', () => {
+        browser.url('');
 
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        HeaderPage.heroFactsLink.click();
+        HeaderPage.wolverineOption.click();
+
+        browser.pause(2000);
+
+        assert.equal(HeaderPage.wolverineModalWindow.isDisplayed(), true, 'Modal is not displayed');
+        HeaderPage.wolverineModalCloseButton.click();
+
+        browser.pause(1000);
+        assert.equal(HeaderPage.wolverineModalWindow.isDisplayed(), false, 'Modal is still displayed');
+    });
+
+    it('It should open spiderman modal', () => {
+        
     });
 
 });
