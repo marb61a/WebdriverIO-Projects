@@ -27,6 +27,39 @@ class HeaderPage {
         return $('#search-form > button');
     }
 
+    // Modal window items
+    get wolverineModalWindow(){
+        return $('#wolverineModal > div > div');
+    }
+
+    get wolverineModalTitleText(){
+        return $('#wolverineModalLabel');
+    }
+
+    get wolverineModalContentText(){
+        return $('#wolverineModal > div > div > div.modal-body');
+    }
+
+    get wolverineModalCloseButton(){
+        return $('#wolverineModal > div > div > div.modal-footer > button');
+    }
+
+    get spidermanModalWindow(){
+        return $('#spidermanModal > div > div');
+    }
+
+    get spidermanModalTitleText(){
+        return $('#spidermanModalLabel');
+    }
+
+    get spidermanModalContentText(){
+        return $('#spidermanModal > div > div > div.modal-body');
+    }
+
+    get spidermanModalCloseButton(){
+        return $('#spidermanModal > div > div > div.modal-footer > button');
+    }
+
 }
 
 module.exports = new HeaderPage();
