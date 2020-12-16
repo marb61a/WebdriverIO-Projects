@@ -75,12 +75,12 @@ describe('Header Test Suite', () => {
         LoginPage.submitButton.click();
 
         HeaderPage.heroFactsLink.click();
-        HeaderPage.spidermanOption.click();
+        HeaderPage.spiderManOption.click();
 
         browser.pause(2000);
 
         assert.equal(HeaderPage.spidermanModalWindow.isDisplayed(), true, 'Modal is not displayed');
-        assert.equal(HeaderPage.spidermanModalTitleText.getText(), 'spiderman Fact', 'There is a title mismatch');
+        assert.equal(HeaderPage.spidermanModalTitleText.getText(), 'Spider-Man Fact', 'There is a title mismatch');
         assert.equal(HeaderPage.spidermanModalContentText.getText(), 'Spider-man was created by Stan Lee and Steve Ditko and first appeared in 1962.', 'Content does not match');
     });
 
@@ -95,7 +95,7 @@ describe('Header Test Suite', () => {
         LoginPage.submitButton.click();
 
         HeaderPage.heroFactsLink.click();
-        HeaderPage.spidermanOption.click();
+        HeaderPage.spiderManOption.click();
 
         browser.pause(2000);
 
@@ -104,6 +104,25 @@ describe('Header Test Suite', () => {
 
         browser.pause(1000);
         assert.equal(HeaderPage.spidermanModalWindow.isDisplayed(), false, 'Modal is still displayed');
+    });
+
+    it.only("Should search for wolverine", () => {
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        HeaderPage.searchField.setValue("wolverine");
+        HeaderPage.searchButton.click();
+
+        assert.equal(browser.isAlertOpen(), true, "Alert is not open");
+        assert.equal(browser.getAlertText(), "Wolverine is awesome!", "text does not match");
+
+        browser.pause(1000);
     });
 
 });
