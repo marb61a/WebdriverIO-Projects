@@ -106,7 +106,7 @@ describe('Header Test Suite', () => {
         assert.equal(HeaderPage.spidermanModalWindow.isDisplayed(), false, 'Modal is still displayed');
     });
 
-    it.only("Should search for wolverine", () => {
+    it("Should search for wolverine", () => {
         browser.url('');
 
         browser.maximizeWindow();
@@ -121,6 +121,28 @@ describe('Header Test Suite', () => {
 
         assert.equal(browser.isAlertOpen(), true, "Alert is not open");
         assert.equal(browser.getAlertText(), "Wolverine is awesome!", "text does not match");
+
+        browser.pause(1000);
+    });
+
+    it.only("Should error from not searching for wolverine", () => {
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        HeaderPage.searchField.setValue("stuff");
+        HeaderPage.searchButton.click();
+
+        assert.equal(browser.isAlertOpen(), true, "Alert is not open");
+        assert.equal(
+            browser.getAlertText(), 
+            "Your search for stuff returned 0 reults. Try something else.", "text does not match"
+        );
 
         browser.pause(1000);
     });
