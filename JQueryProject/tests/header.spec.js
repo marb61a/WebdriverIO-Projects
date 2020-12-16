@@ -125,7 +125,7 @@ describe('Header Test Suite', () => {
         browser.pause(1000);
     });
 
-    it.only("Should error from not searching for wolverine", () => {
+    it("Should error from not searching for wolverine", () => {
         browser.url('');
 
         browser.maximizeWindow();
@@ -145,6 +145,26 @@ describe('Header Test Suite', () => {
         );
 
         browser.pause(1000);
+    });
+
+    it("Should close the alert", () => {
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        HeaderPage.searchField.setValue("stuff");
+        HeaderPage.searchButton.click();
+
+        assert.equal(browser.isAlertOpen(), true, "Alert is not open");
+        browser.acceptAlert();
+        assert.equal(browser.isAlertOpen(), false, "Alert is still open");
+
+        browser.pause(2000);
     });
 
 });

@@ -130,4 +130,23 @@ describe('Test Suite', () => {
 
     });
 
+    it.only("Should not remember login credentials", () => {
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.submitButton.click();
+
+        assert.equal(LoginPage.overlay.isDisplayed(), false, 'The overlay is still displayed');
+
+        HeaderPage.logoutLink.click();
+
+        assert.equal(LoginPage.overlay.isDisplayed(), true, 'The overlay is not displayed');
+        assert.equal(LoginPage.emailField.getValue(), '', 'Values are not the same');
+        assert.equal(LoginPage.passwordField.getValue().length, 0, 'Password is too short');
+        assert.equal(LoginPage.rememberLoginCheckbox.isSelected(), false, 'Checkbox is not selected');        
+    });
+    
 });
