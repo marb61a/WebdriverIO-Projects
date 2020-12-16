@@ -42,7 +42,7 @@ describe('Header Test Suite', () => {
 
     });
 
-    it.only('It should close wolverine modal', () => {
+    it('It should close wolverine modal', () => {
         browser.url('');
 
         browser.maximizeWindow();
@@ -65,7 +65,45 @@ describe('Header Test Suite', () => {
     });
 
     it('It should open spiderman modal', () => {
-        
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        HeaderPage.heroFactsLink.click();
+        HeaderPage.spidermanOption.click();
+
+        browser.pause(2000);
+
+        assert.equal(HeaderPage.spidermanModalWindow.isDisplayed(), true, 'Modal is not displayed');
+        assert.equal(HeaderPage.spidermanModalTitleText.getText(), 'spiderman Fact', 'There is a title mismatch');
+        assert.equal(HeaderPage.spidermanModalContentText.getText(), 'Spider-man was created by Stan Lee and Steve Ditko and first appeared in 1962.', 'Content does not match');
+    });
+
+    it("It should close spiderman modal", () => {
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
+        HeaderPage.heroFactsLink.click();
+        HeaderPage.spidermanOption.click();
+
+        browser.pause(2000);
+
+        assert.equal(HeaderPage.spidermanModalWindow.isDisplayed(), true, 'Modal is not displayed');
+        HeaderPage.spidermanModalCloseButton.click();
+
+        browser.pause(1000);
+        assert.equal(HeaderPage.spidermanModalWindow.isDisplayed(), false, 'Modal is still displayed');
     });
 
 });
