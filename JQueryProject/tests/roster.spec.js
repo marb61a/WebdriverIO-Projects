@@ -19,10 +19,35 @@ describe('Test Suite', () => {
         assert.equal(RosterPage.instructionText.getText(), instructions, "Instruction text mismatch");
         assert.equal(RosterPage.listTitle.getText(), title, "Title does not match");
 
-        browser.pause(2000);
+        assert.equal(RosterPage.wolverineItem.getText(), "Wolverine", "Wolverine text does not match");
+        assert.equal(RosterPage.ironManItem.getText(), "Iron Man", "Iron Man text does not match");
+        assert.equal(RosterPage.deadpoolItem.getText(), "Deadpool", "Deadpool text does not match");
+        assert.equal(RosterPage.thorItem.getText(), "Thor", "Thor text does not match");
+        assert.equal(RosterPage.spidermanItem.getText(), "Spider-Man", "Spider-Man text does not match");
 
+        assert.equal(RosterPage.addHeroLabel.getText(), "ADD A SUPERHERO", "Add hero text does not match");
+        assert.equal(RosterPage.addHeroField.getAttribute('placeholder'), "Enter Hero", "Placeholder does not match");
+
+        browser.pause(2000);
     });
 
-    it('Should test something else');
+    it.only('Should test added item', () => {
+        browser.url('');
+
+        browser.maximizeWindow();
+
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.submitButton.click();
+
+        var newHeroItem = "Bob";
+
+        RosterPage.addHeroField.setValue(newHeroItem);
+        RosterPage.submitButton.click();
+
+        assert.equal(RosterPage.newItem.getText(), newHeroItem, "New hero item text does not match");
+
+        browser.pause(2000);
+    });
 
 });

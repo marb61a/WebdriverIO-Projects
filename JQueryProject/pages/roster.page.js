@@ -1,6 +1,6 @@
 class RosterPage {
     get instructionText(){
-        return $("body > div.container-fluid > div:nth-child(3) > p");
+        return $("body > div.container-fluid > div:nth-child(3) > div > p");
     }
 
     get listTitle(){
@@ -28,6 +28,12 @@ class RosterPage {
         return $("#hero-list > li:nth-child(5)");
     }
 
+    // Adding a new item will increase by 1 the nth-child value
+    // The first nth-child value should be 6
+    get newItem(){
+        return $("#hero-list > li:nth-child(6)");
+    }
+
     get addHeroLabel(){
         return $("#addHero-form > div > label");
     }
@@ -36,7 +42,7 @@ class RosterPage {
         return $("#heroInput");
     }
 
-    get submit(){
+    get submitButton(){
         return $("#addHero-form > button");
     }
 
