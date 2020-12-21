@@ -1,48 +1,48 @@
 class VotePage {
     get voteTitle(){
-        return $("");
+        return $("body > div.container-fluid > div:nth-child(6) > div > p");
     }
 
     // Radio Buttons
     get voteItem1(){
-        return $("");
+        return $("#heroMovieRadio1");
     }
 
     get voteItem2(){
-        return $("");
+        return $("#heroMovieRadio2");
     }
 
     get voteItem3(){
-        return $("");
+        return $("#heroMovieRadio3");
     }
 
     get voteItem4(){
-        return $("");
+        return $("#heroMovieRadio4");
     }
 
     get voteItem5(){
-        return $("");
+        return $("#heroMovieRadio5");
     }
 
     // Labels
     get voteItemLabel1(){
-        return $("");
+        return $("#vote-form > div:nth-child(1) > label");
     }
 
     get voteItemLabel2(){
-        return $("");
+        return $("#vote-form > div:nth-child(2) > label");
     }
 
     get voteItemLabel3(){
-        return $("");
+        return $("#vote-form > div:nth-child(3) > label");
     }
 
     get voteItemLabel4(){
-        return $("");
+        return $("#vote-form > div:nth-child(4) > label");
     }
 
     get voteItemLabel5(){
-        return $("");
+        return $("#vote-form > div:nth-child(5) > label");
     }
 
     get submitButton(){
@@ -51,43 +51,43 @@ class VotePage {
 
     // Movie title grid / Number of votes
     get voteItemText1(){
-        return $("");
+        return $("#movieName1");
     }
 
     get voteItemVal1(){
-        return $("");
+        return $("#movieVotes1");
     }
 
     get voteItemText2(){
-        return $("");
+        return $("#movieName2");
     }
 
     get voteItemVal2(){
-        return $("");
+        return $("#movieVotes2");
     }
 
     get voteItemText3(){
-        return $("");
+        return $("#movieName3");
     }
 
     get voteItemVal3(){
-        return $("");
+        return $("#movieVotes3");
     }
 
     get voteItemText4(){
-        return $("");
+        return $("#movieName4");
     }
 
     get voteItemVal4(){
-        return $("");
+        return $("#movieVotes4");
     }
 
     get voteItemText5(){
-        return $("");
+        return $("#movieName5");
     }
 
     get voteItemVal5(){
-        return $("");
+        return $("#movieVotes5");
     }
 }
 
