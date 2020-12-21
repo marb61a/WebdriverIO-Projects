@@ -9,35 +9,35 @@ class RosterPage {
 
     // Creating each element individual
     get wolverineItem(){
-        return $("");
+        return $("#hero-list > li:nth-child(1)");
     }
 
     get ironManItem(){
-        return $("");
+        return $("#hero-list > li:nth-child(2)");
     }
 
     get deadpoolItem(){
-        return $("");
+        return $("#hero-list > li:nth-child(3)");
     }
 
     get thorItem(){
-        return $("");
+        return $("#hero-list > li:nth-child(4)");
     }
 
     get spidermanItem(){
-        return $("");
+        return $("#hero-list > li:nth-child(5)");
     }
 
     get addHeroLabel(){
-        return $("");
+        return $("#addHero-form > div > label");
     }
 
     get addHeroField(){
-        return $("");
+        return $("#heroInput");
     }
 
     get submit(){
-        return $("");
+        return $("#addHero-form > button");
     }
 
 }
