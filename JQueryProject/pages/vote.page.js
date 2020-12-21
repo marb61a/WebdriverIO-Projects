@@ -46,7 +46,7 @@ class VotePage {
     }
 
     get submitButton(){
-        return $("");
+        return $("#vote-form > button");
     }
 
     // Movie title grid / Number of votes
