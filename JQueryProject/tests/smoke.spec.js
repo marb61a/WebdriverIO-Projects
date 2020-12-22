@@ -22,10 +22,20 @@ describe('Smoke Test Suite', () => {
         assert.equal(LoginPage.rememberLoginLabel.isDisplayed(), true, "LoginPage.rememberLoginLabel");
         assert.equal(LoginPage.submitButton.isDisplayed(), true, "LoginPage.submitButton");
 
+        // Login to the App
+        LoginPage.emailField.setValue('1@2.com');
+        LoginPage.passwordField.setValue('password');
+        LoginPage.rememberLoginCheckbox.click();
+        LoginPage.submitButton.click();
+
         // Header Verification
         assert.equal(HeaderPage.logoutLink.isDisplayed(), true, "HeaderPage.logoutLink");
         assert.equal(HeaderPage.linkLink.isDisplayed(), true, "HeaderPage.linkLink");
         assert.equal(HeaderPage.heroFactsLink.isDisplayed(), true, "HeaderPage.heroFactsLink");
+
+        // Need to expand HeroFactsLink to avoid test failing
+        HeaderPage.heroFactsLink.click();
+
         assert.equal(HeaderPage.wolverineOption.isDisplayed(), true, "HeaderPage.wolverineOption");
         assert.equal(HeaderPage.spiderManOption.isDisplayed(), true, "HeaderPage.spidermanOption");
         assert.equal(HeaderPage.searchField.isDisplayed(), true, "HeaderPage.searchField");
@@ -71,7 +81,7 @@ describe('Smoke Test Suite', () => {
         assert.equal(VotePage.voteItemText5.isDisplayed(), true, "VotePage.voteItemText5");
         assert.equal(VotePage.voteItemVal5.isDisplayed(), true, "VotePage.voteItemVal5");
 
-        bowser.pause(2000);
+        browser.pause(2000);
     });
 
 });

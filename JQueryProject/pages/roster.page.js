@@ -34,6 +34,11 @@ class RosterPage {
         return $("#hero-list > li:nth-child(6)");
     }
 
+    // Setting up dynamic selectors
+    get rosterItems(){
+        return $("#hero-list > li");
+    }
+
     get addHeroLabel(){
         return $("#addHero-form > div > label");
     }

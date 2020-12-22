@@ -1,6 +1,6 @@
 class VotePage {
     get voteTitle(){
-        return $("body > div.container-fluid > div:nth-child(6) > div > p");
+        return $("body > div.container-fluid > div:nth-child(6) > div > h4");
     }
 
     // Radio Buttons
