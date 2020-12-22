@@ -89,6 +89,11 @@ class VotePage {
     get voteItemVal5(){
         return $("#movieVotes5");
     }
+
+    get thanksAlert(){
+        return $("#vote-alert");
+    }
+
 }
 
 module.exports = new VotePage();

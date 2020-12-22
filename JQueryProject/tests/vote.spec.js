@@ -21,10 +21,10 @@ describe('Vote Section Test Suite', () => {
         VotePage.submitButton.click();
 
         assert.equal(VotePage.voteItemVal1.getText(), originalVoteValue + 1, "Votes do not match");
+        assert.equal(VotePage.thanksAlert.isDisplayed(), true, 'Alert is not displayed');
+        assert.equal(VotePage.thanksAlert.getText(), 'Thanks for voting!', 'Text does not match');
 
         browser.pause(2000);
     });
-
-    it('Should test something else');
 
 });
