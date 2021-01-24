@@ -9,9 +9,11 @@ Describe("Dynamic roster item suite", () => {
 
         browser.maximizeWindow();
 
-        LoginPage.emailField.setValue('1@2.com');
-        LoginPage.passwordField.setValue('password');
-        LoginPage.submitButton.click();
+        // LoginPage.emailField.setValue('1@2.com');
+        // LoginPage.passwordField.setValue('password');
+        // LoginPage.submitButton.click();
+
+        LoginPage.login("1@2.com", "password");
 
         RosterPage.addHeroField.setValue("Spongebob");
         RosterPage.submitButton.click();
@@ -27,9 +29,10 @@ Describe("Dynamic roster item suite", () => {
 
         browser.maximizeWindow();
 
-        LoginPage.emailField.setValue('1@2.com');
-        LoginPage.passwordField.setValue('password');
-        LoginPage.submitButton.click();
+        // LoginPage.emailField.setValue('1@2.com');
+        // LoginPage.passwordField.setValue('password');
+        // LoginPage.submitButton.click();
+        LoginPage.login("1@2.com", "password");
 
         for(let i = 0; i < heroes.length; i++){
             assert.equal(RosterPage.rosterItems[i].getText(), heroes[i], "Hero text does not match");
@@ -43,12 +46,21 @@ Describe("Dynamic roster item suite", () => {
 
         browser.maximizeWindow();
 
-        LoginPage.emailField.setValue('1@2.com');
-        LoginPage.passwordField.setValue('password');
-        LoginPage.submitButton.click();
+        // LoginPage.emailField.setValue('1@2.com');
+        // LoginPage.passwordField.setValue('password');
+        // LoginPage.submitButton.click();
+        LoginPage.login("1@2.com", "password");
 
         for(let i = 0; i < heroes.length; i++){
-            assert.equal(RosterPage.rosterItems[i].getText(), heroes[i], "Hero text does not match");
+            RosterPage.addHeroField.setValue(heroes[i]);
+            RosterPage.submitButton.click();
+            browser.pause(2000);
+        }
+
+        // Allows items to be created and then verified rather than verifying after each 
+        // item is added to the list
+        for(let i = 0; i < heroes.length; i++){
+            assert.equal(RosterPage.rosterItems[i+5].getText(), heroes[i], "Hero text does not match");
         }
     });
 });
