@@ -51,6 +51,11 @@ class RosterPage {
         return $("#addHero-form > button");
     }
 
+    addHero(){
+        this.addHeroField.setValue(hero);
+        this.submitButton.click();
+    }
+
 }
 
 module.exports = new RosterPage();

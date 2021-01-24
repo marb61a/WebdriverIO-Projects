@@ -9,14 +9,12 @@ Describe("Dynamic roster item suite", () => {
 
         browser.maximizeWindow();
 
-        // LoginPage.emailField.setValue('1@2.com');
-        // LoginPage.passwordField.setValue('password');
-        // LoginPage.submitButton.click();
-
         LoginPage.login("1@2.com", "password");
 
-        RosterPage.addHeroField.setValue("Spongebob");
-        RosterPage.submitButton.click();
+        // RosterPage.addHeroField.setValue("Spongebob");
+        // RosterPage.submitButton.click();
+        
+        RosterPage.addHero("Spongebob");
 
         assert.equal(RosterPage.rosterItems[5].getText(), "Spongebob", "Hero text does not match");
 
@@ -29,9 +27,6 @@ Describe("Dynamic roster item suite", () => {
 
         browser.maximizeWindow();
 
-        // LoginPage.emailField.setValue('1@2.com');
-        // LoginPage.passwordField.setValue('password');
-        // LoginPage.submitButton.click();
         LoginPage.login("1@2.com", "password");
 
         for(let i = 0; i < heroes.length; i++){
@@ -46,14 +41,13 @@ Describe("Dynamic roster item suite", () => {
 
         browser.maximizeWindow();
 
-        // LoginPage.emailField.setValue('1@2.com');
-        // LoginPage.passwordField.setValue('password');
-        // LoginPage.submitButton.click();
         LoginPage.login("1@2.com", "password");
 
         for(let i = 0; i < heroes.length; i++){
-            RosterPage.addHeroField.setValue(heroes[i]);
-            RosterPage.submitButton.click();
+            // RosterPage.addHeroField.setValue(heroes[i]);
+            // RosterPage.submitButton.click();
+
+            RosterPage.addHero(heroes[i]);
             browser.pause(2000);
         }
 

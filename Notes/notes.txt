@@ -147,7 +147,8 @@ Page Object Model
     - Tests without callback functions will be skipped
         - Also tests with empty callbacks will pass tests
     - The keyword Only can be used on it blocks
-        - This means that only the specified block will run the test
+        - This means that the specified block will be the only it test block ran
+        !!! - The file will have to be being pointed to in the wdio.conf.js file to run the tests
 
 !! isDisplayed
     - Displayed can be a tricky concept as it does not mean necessarily visible to the user
